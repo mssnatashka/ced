@@ -1,0 +1,431 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap");
+html {
+  font-size: 10px;
+}
+
+body {
+  color: #4B5265;
+  font-size: 1.6rem;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #F2F2F2;
+  background-image: url(src/images/food.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.banner {
+  background-color: #F8D8D8;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: cover;
+  background-image: url(src/images/balls.svg);
+  position: relative;
+  padding-bottom: 10rem;
+  width: 100%;
+}
+
+h1 {
+  margin: 0;
+  color: #FF0B63;
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  width: 100%;
+}
+
+p {
+  position: absolute;
+  top: 8rem;
+  left: 0;
+  width: 100%;
+}
+
+.banner-img {
+  margin: auto;
+  padding: 5rem;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: contain;
+}
+
+.button-1 {
+  vertical-align: top;
+  margin-top: 5rem;
+  text-decoration: none;
+  background: none;
+  border: 0;
+  margin: 1.5rem;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  appearance: none;
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  color: white;
+  background-color: #FF0B63;
+  letter-spacing: 50%;
+  width: 95%;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.button {
+  background: none;
+  border: 0;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+  color: #3F3D56;
+  margin: 1.5rem;
+  padding: 2rem;
+  border: 0.1rem solid #D1D6E3;
+  border-radius: 1.5rem;
+  width: 95%;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  color: white;
+  background-color: #FF0B63;
+}
+
+.calculator {
+  margin-bottom: 20rem;
+}
+
+form {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 7%);
+  padding: 4rem;
+  background-color: #F8D8D8;
+  width: 40rem;
+  height: 50rem;
+  position: relative;
+  border-radius: 1.5rem;
+  margin-bottom: 10rem;
+  color: #3F3D56;
+}
+
+::placeholder {
+  color: #3F3D56;
+}
+
+.input__text {
+  margin: 1rem;
+  padding: 2rem;
+  border: 0.1rem solid #D1D6E3;
+  border-radius: 1.5rem;
+  width: 85%;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  background-color: #F2F2F2;
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  appearance: textfield;
+  outline: #4B5265;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+.checkbox__group {
+  margin: 1.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+/* для элемента input c type="radio" */
+.custom-radio {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  outline: #4B5265;
+}
+
+/* для элемента label связанного с .custom-radio */
+.custom-radio + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+/* создание в label псевдоэлемента  before со следующими стилями */
+.custom-radio + label::before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  background-color: #F2F2F2;
+  border: 1px solid #D1D6E3;
+  border-radius: 15%;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+/* стили для радиокнопки, находящейся в состоянии checked */
+.custom-radio:checked + label::before {
+  border-color: #D1D6E3;
+  background-color: #F2F2F2;
+  background-image: url("src/images/check.svg");
+  background-size: 1.4rem;
+}
+
+.select {
+  margin-bottom: 1rem;
+  box-sizing: 1.5rem;
+  outline: #4B5265;
+}
+
+.select select {
+  outline: #4B5265;
+  background: none;
+  border: 0;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+  color: #3F3D56;
+  margin: 1.3rem;
+  padding: 2rem;
+  background-color: #F2F2F2;
+  border: 0.1rem solid #D1D6E3;
+  border-radius: 1.5rem;
+  width: 95%;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  appearance: none;
+  background-image: url(src/images/select.svg);
+  background-repeat: no-repeat;
+  background-size: 2rem;
+  background-position: 95%;
+}
+
+option {
+  border-radius: 40px;
+}
+
+.select__list {
+  text-transform: capitalize;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+  border-radius: 1.5rem;
+  -moz-border-radius: 10px;
+}
+
+.result_div {
+  margin-top: 2rem;
+  line-height: 5.5rem;
+}
+
+.form_result {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 10%);
+  padding: 5rem;
+  background-color: #F8D8D8;
+  width: 45rem;
+  height: 35rem;
+  position: relative;
+  border-radius: 1.5rem;
+  margin-bottom: 4rem;
+  color: #3F3D56;
+}
+
+p {
+  color: #4B5265;
+  font-size: 2rem;
+}
+
+span {
+  font-weight: normal;
+  text-align: center;
+  color: #4B5265;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  font-size: 2.2rem;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 50%;
+}
+
+nobr {
+  font-weight: normal;
+  text-align: center;
+  color: #FF0B63;
+  font-size: 2rem;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 50%;
+}
+
+h3,
+.label_foodplan {
+  font-weight: normal;
+  text-align: center;
+  color: #FF0B63;
+  font-size: 2.4rem;
+  margin-top: 5rem;
+}
+
+.label_foodplan {
+  font-size: 3rem;
+  padding-bottom: 5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+  background-color: #F2F2F2;
+}
+
+.header-img {
+  width: 9rem;
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding-left: 0;
+}
+
+.control_a {
+  text-decoration: none;
+  /* Отменяем подчеркивание у ссылки */
+  color: #FF0B63;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 5%;
+}
+
+@media all and (min-width: 950px) and (max-width: 1050px) {
+  .banner-img {
+    margin: auto;
+    padding: 5rem;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: contain;
+    width: 800px;
+  }
+}
+
+@media all and (min-width: 770px) and (max-width: 949px) {
+  .banner-img {
+    margin: auto;
+    padding: 5rem;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: cover;
+    width: 700px;
+  }
+  p {
+    position: absolute;
+    top: 8rem;
+    bottom: 8rem;
+    left: 0;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 769px) {
+  .banner-img {
+    margin: auto;
+    margin-bottom: 5rem;
+    padding: 15rem;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    width: 0rem;
+    background-image: url(src/images/girl.svg);
+  }
+  .banner {
+    background-color: #F8D8D8;
+    text-align: center;
+    margin-bottom: 15rem;
+    padding: 10rem;
+    position: relative;
+  }
+  h1 {
+    font-size: 18px;
+    top: 2rem;
+  }
+  p {
+    font-size: 16px;
+    top: 5rem;
+    bottom: 8rem;
+  }
+  .button {
+    font-size: 14px;
+    margin: .7rem;
+    padding: 2rem;
+  }
+  .button-1 {
+    margin: .5rem;
+    padding: 2rem;
+    font-size: 1.2rem;
+  }
+  form {
+    width: 30rem;
+    height: 45rem;
+  }
+  .input__text {
+    margin: .7rem;
+    padding: 1.5rem;
+  }
+  .checkbox__group {
+    margin: 1.5rem;
+    padding: 2rem;
+  }
+  .select {
+    margin-bottom: 1rem;
+  }
+  .select select {
+    margin: .7rem;
+    padding: 1.5rem;
+  }
+  .header {
+    background-color: #F8D8D8;
+  }
+  .control_a {
+    text-decoration: none;
+    /* Отменяем подчеркивание у ссылки */
+    color: #F8D8D8;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0rem;
+    letter-spacing: 5%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

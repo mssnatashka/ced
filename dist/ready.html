@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CED: CaloriesEveryDay</title>
+    <meta charset="utf-8">
+    <script href="myjs.js"></script>
+    <script>
+        jQuery(($) => {
+            $('.select').on('click', '.select__head', function() {
+                if ($(this).hasClass('open')) {
+                    $(this).removeClass('open');
+                    $(this).next().fadeOut();
+                } else {
+                    $('.select__head').removeClass('open');
+                    $('.select__list').fadeOut();
+                    $(this).addClass('open');
+                    $(this).next().fadeIn();
+                }
+            });
+
+            $('.select').on('click', '.select__item', function() {
+                $('.select__head').removeClass('open');
+                $(this).parent().fadeOut();
+                $(this).parent().prev().text($(this).text());
+                $(this).parent().prev().prev().val($(this).text());
+            });
+
+            $(document).click(function(e) {
+                if (!$(e.target).closest('.select').length) {
+                    $('.select__head').removeClass('open');
+                    $('.select__list').fadeOut();
+                }
+            });
+        });
+    </script>
+    <style>
+        /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+        
+        html {
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%
+        }
+        
+        .size {
+            height: 100%;
+        }
+        
+        body {
+            margin: 0
+        }
+        
+        main {
+            display: block
+        }
+        
+        h1 {
+            font-size: 2em;
+            margin: .67em 0
+        }
+        
+        hr {
+            box-sizing: content-box;
+            height: 0;
+            overflow: visible
+        }
+        
+        pre {
+            font-family: monospace, monospace;
+            font-size: 1em
+        }
+        
+        a {
+            background-color: transparent
+        }
+        
+        abbr[title] {
+            border-bottom: none;
+            text-decoration: underline;
+            text-decoration: underline dotted
+        }
+        
+        b,
+        strong {
+            font-weight: bolder
+        }
+        
+        code,
+        kbd,
+        samp {
+            font-family: monospace, monospace;
+            font-size: 1em
+        }
+        
+        small {
+            font-size: 80%
+        }
+        
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline
+        }
+        
+        sub {
+            bottom: -.25em
+        }
+        
+        sup {
+            top: -.5em
+        }
+        
+        img {
+            border-style: none
+        }
+        
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0
+        }
+        
+        button,
+        input {
+            overflow: visible
+        }
+        
+        button,
+        select {
+            text-transform: none
+        }
+        
+        [type=button],
+        [type=reset],
+        [type=submit],
+        button {
+            -webkit-appearance: button
+        }
+        
+        [type=button]::-moz-focus-inner,
+        [type=reset]::-moz-focus-inner,
+        [type=submit]::-moz-focus-inner,
+        button::-moz-focus-inner {
+            border-style: none;
+            padding: 0
+        }
+        
+        [type=button]:-moz-focusring,
+        [type=reset]:-moz-focusring,
+        [type=submit]:-moz-focusring,
+        button:-moz-focusring {
+            outline: 1px dotted ButtonText
+        }
+        
+        fieldset {
+            padding: .35em .75em .625em
+        }
+        
+        legend {
+            box-sizing: border-box;
+            color: inherit;
+            display: table;
+            max-width: 100%;
+            padding: 0;
+            white-space: normal
+        }
+        
+        progress {
+            vertical-align: baseline
+        }
+        
+        textarea {
+            overflow: auto
+        }
+        
+        [type=checkbox],
+        [type=radio] {
+            box-sizing: border-box;
+            padding: 0
+        }
+        
+        [type=number]::-webkit-inner-spin-button,
+        [type=number]::-webkit-outer-spin-button {
+            height: auto
+        }
+        
+        [type=search] {
+            -webkit-appearance: textfield;
+            outline-offset: -2px
+        }
+        
+        [type=search]::-webkit-search-decoration {
+            -webkit-appearance: none
+        }
+        
+         ::-webkit-file-upload-button {
+            -webkit-appearance: button;
+            font: inherit
+        }
+        
+        details {
+            display: block
+        }
+        
+        summary {
+            display: list-item
+        }
+        
+        template {
+            display: none
+        }
+        
+        [hidden] {
+            display: none
+        }
+        /*# sourceMappingURL=normalize.min.css.map */
+        
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap');
+        html {
+            font-size: 10px;
+        }
+        
+        body {
+            color: #4B5265;
+            font-size: 1.6rem;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #F2F2F2;
+            background-image: url(src/images/food.svg);
+            background-position: center;
+            background-size: contain;
+        }
+        
+        .banner {
+            background-color: #F8D8D8;
+            text-align: center;
+            background-repeat: no-repeat;
+            background-position-x: center;
+            background-size: cover;
+            background-image: url(src/images/balls.svg);
+            position: relative;
+            padding-bottom: 10rem;
+            width: 100%;
+            height: 100%;
+        }
+        
+        h1 {
+            margin: 0;
+            color: #FF0B63;
+            position: absolute;
+            top: 4rem;
+            left: 0;
+            width: 100%;
+        }
+        
+        p1 {
+            position: absolute;
+            top: 8rem;
+            left: 0;
+            width: 100%;
+        }
+        
+        .banner-img {
+            margin: auto;
+            padding: 5rem;
+            position: relative;
+            background-repeat: no-repeat;
+            background-position-x: center;
+            background-size: contain;
+            width: 75%;
+            height: 100%;
+        }
+        
+        .button-1 {
+            vertical-align: top;
+            margin-top: 5rem;
+            text-decoration: none;
+            background: none;
+            border: 0;
+            margin: 1.5rem;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            font-family: inherit;
+            font-size: inherit;
+            position: relative;
+            appearance: none;
+            font-size: 18px;
+            font-family: 'Roboto', sans-serif;
+            border: none;
+            color: white;
+            background-color: #FF0B63;
+            letter-spacing: 50%;
+            width: 95%;
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+        
+        #div1 {
+            display: none;
+        }
+        
+        .button {
+            background: none;
+            border: 0;
+            font-size: 18px;
+            font-family: 'Open Sans', sans-serif;
+            color: #3F3D56;
+            margin: 1.5rem;
+            padding: 2rem;
+            border: 0.1rem solid #D1D6E3;
+            border-radius: 1.5rem;
+            font-family: inherit;
+            font-size: inherit;
+            position: relative;
+            font-size: 16px;
+            font-family: 'Roboto', sans-serif;
+            border: none;
+            color: white;
+            background-color: #FF0B63;
+        }
+        
+        .calculator {
+            margin-bottom: 20rem;
+        }
+        
+        form {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 7%);
+            padding: 4rem;
+            background-color: #F8D8D8;
+            width: 40rem;
+            height: 50rem;
+            position: relative;
+            border-radius: 1.5rem;
+            margin-bottom: 10rem;
+            color: #3F3D56;
+        }
+        
+         ::placeholder {
+            color: #3F3D56;
+        }
+        
+        .input__text {
+            margin: 1rem;
+            padding: 2rem;
+            border: 0.1rem solid #D1D6E3;
+            border-radius: 1.5rem;
+            width: 85%;
+            font-family: inherit;
+            font-size: inherit;
+            position: relative;
+            background-color: #F2F2F2;
+            -moz-appearance: textfield;
+            -webkit-appearance: textfield;
+            appearance: textfield;
+        }
+        
+        input[type="number"] {
+            -moz-appearance: textfield;
+            -webkit-appearance: textfield;
+            appearance: textfield;
+            outline: #4B5265;
+        }
+        
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            display: none;
+        }
+        
+        .checkbox__group {
+            margin: 1.5rem;
+            padding: 2rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            position: relative;
+        }
+        /* для элемента input c type="radio" */
+        
+        .custom-radio {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+            outline: #4B5265;
+        }
+        /* для элемента label связанного с .custom-radio */
+        
+        .custom-radio+label {
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+        }
+        /* создание в label псевдоэлемента  before со следующими стилями */
+        
+        .custom-radio+label::before {
+            content: '';
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            flex-shrink: 0;
+            flex-grow: 0;
+            background-color: #F2F2F2;
+            border: 1px solid #D1D6E3;
+            border-radius: 15%;
+            margin-right: 0.5em;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 50% 50%;
+        }
+        /* стили для радиокнопки, находящейся в состоянии checked */
+        
+        .custom-radio:checked+label::before {
+            border-color: #D1D6E3;
+            background-color: #F2F2F2;
+            background-image: url("src/images/check.svg");
+            background-size: 1.4rem;
+        }
+        
+        .select {
+            position: relative;
+            display: block;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            right: 0.5rem;
+            color: #3F3D56;
+        }
+        
+        .select__head {
+            width: 92%;
+            left: 1rem;
+            background-color: #F2F2F2;
+            border: 0.1rem solid #D1D6E3;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            cursor: pointer;
+        }
+        
+        .select__head::after {
+            width: 20px;
+            height: 10px;
+            background: url("src/images/select.svg") no-repeat center / cover;
+            position: absolute;
+            left: 90%;
+            bottom: 4.5rem;
+            transform: translateY(50%);
+            content: '';
+            display: block;
+            transition: .2s ease-in;
+        }
+        
+        .select__head.open::after {
+            transform: translateY(50%) rotate(180deg);
+        }
+        
+        .select__list {
+            display: none;
+            position: absolute;
+            color: #F2F2F2;
+            left: 0.5;
+            right: 0.5;
+            background: #F2F2F2;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin-top: 5px;
+            width: 95%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            z-index: 100;
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+            color: #424348;
+            scrollbar-color: dark;
+            scrollbar-width: thin;
+            overscroll-behavior: contain;
+        }
+        
+        .select__list::-webkit-scrollbar {
+            width: 7px;
+            background-color: #F8F9FA;
+        }
+        
+        .select__list::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: #D9D9D9;
+        }
+        
+        .select__list .select__item {
+            position: relative;
+            border-top: 1px solid rgba(224, 229, 231, 0.5);
+            padding: 3px 5px;
+            cursor: pointer;
+            list-style-type: none;
+        }
+        
+        .select__list .select__item:hover {
+            background-color: rgba(224, 229, 231, 0.5);
+        }
+        
+        .result_div {
+            margin-top: 2rem;
+            line-height: 5.5rem;
+        }
+        
+        .form_result {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 10%);
+            padding: 4rem;
+            background-color: #F8D8D8;
+            width: 40rem;
+            height: 35rem;
+            position: relative;
+            border-radius: 1.5rem;
+            margin-bottom: 4rem;
+            color: #3F3D56;
+        }
+        
+        p1 {
+            color: #4B5265;
+            font-size: 2rem;
+        }
+        
+        span {
+            font-weight: normal;
+            text-align: center;
+            color: #4B5265;
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            font-size: 2.2rem;
+            font-family: 'Roboto', sans-serif;
+            letter-spacing: 50%;
+        }
+        
+        nobr {
+            font-weight: normal;
+            text-align: center;
+            color: #FF0B63;
+            font-size: 2rem;
+            font-family: 'Roboto', sans-serif;
+            letter-spacing: 50%;
+        }
+        
+        h3,
+        .label_foodplan {
+            font-weight: normal;
+            text-align: center;
+            color: #FF0B63;
+            font-size: 2.4rem;
+            margin-top: 5rem;
+        }
+        
+        .label_foodplan {
+            font-size: 3rem;
+            padding-bottom: 5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .section_foodplan {
+            font-size: 2.4rem;
+            font-family: 'Open Sans', sans-serif;
+            position: absolute;
+            left: 50%;
+            transform: translate(-45%, 15%);
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .image_result {
+            size: 600px;
+            transform: translate(0%, 20%);
+            padding-bottom: 5rem;
+            left: 50%;
+            text-align: center;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 100%;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            margin: 0 auto;
+            font-family: 'Roboto', sans-serif;
+            background-color: #F2F2F2;
+        }
+        
+        .header-img {
+            width: 9rem;
+        }
+        
+        .control {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .control_a {
+            text-decoration: none;
+            /* Отменяем подчеркивание у ссылки */
+            color: #FF0B63;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 5%;
+        }
+        
+        @media all and (min-width: 950px) and (max-width: 1050px) {
+            .banner-img {
+                margin: auto;
+                padding: 5rem;
+                position: relative;
+                background-repeat: no-repeat;
+                background-position-x: center;
+                background-size: contain;
+                height: 100%;
+                width: 75%;
+            }
+        }
+        
+        @media all and (min-width: 770px) and (max-width: 949px) {
+            .banner-img {
+                margin: auto;
+                padding: 5rem;
+                position: relative;
+                background-repeat: no-repeat;
+                background-position-x: center;
+                background-size: cover;
+                width: 700px;
+            }
+            p1 {
+                position: absolute;
+                top: 8rem;
+                bottom: 8rem;
+                left: 0;
+                width: 100%;
+            }
+            .banner {
+                margin-bottom: 3rem;
+            }
+        }
+        
+        @media all and (max-width: 769px) and (min-width: 658px) {
+            .banner-img {
+                margin: auto;
+                margin-bottom: 5rem;
+                padding: 15rem;
+                position: relative;
+                background-repeat: no-repeat;
+                background-position-x: center;
+                width: 0rem;
+                background-image: url(src/images/girl.svg);
+            }
+            .banner {
+                background-color: #F8D8D8;
+                text-align: center;
+                margin-bottom: 5rem;
+                padding: 10rem;
+                position: relative;
+                right: 10rem;
+            }
+            h1 {
+                font-size: 18px;
+                top: 2rem;
+            }
+            p1 {
+                font-size: 16px;
+                top: 5rem;
+                bottom: 8rem;
+            }
+            .button {
+                margin: .3rem;
+                padding: 2rem;
+                font-size: 1.2rem;
+            }
+            .button-1 {
+                margin: .5rem;
+                padding: 2rem;
+                font-size: 1.2rem;
+            }
+            form,
+            .form_result {
+                width: 30rem;
+                height: 45rem;
+            }
+            .input__text {
+                margin: .7rem;
+                padding: 1.5rem;
+            }
+            .checkbox__group {
+                margin: 1.5rem;
+                padding: 2rem;
+            }
+            .select__head::after {
+                width: 20px;
+                height: 10px;
+                background: url("src/images/select.svg") no-repeat center / cover;
+                position: absolute;
+                left: 90%;
+                bottom: 4rem;
+                transform: translateY(50%);
+                content: '';
+                display: block;
+                transition: .2s ease-in;
+            }
+            .select__head.open::after {
+                transform: translateY(50%) rotate(180deg);
+            }
+            .select__list {
+                display: none;
+                position: absolute;
+                color: #F2F2F2;
+                left: 0.5;
+                right: 0.5;
+                background: #F2F2F2;
+                box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                margin-top: 5px;
+                width: 95%;
+                overflow-x: hidden;
+                overflow-y: auto;
+                z-index: 100;
+                margin: 0;
+                padding: 0;
+                font-size: 18px;
+                color: #424348;
+                scrollbar-color: dark;
+                scrollbar-width: thin;
+                overscroll-behavior: contain;
+            }
+            .header {
+                background-color: #F8D8D8;
+            }
+            .control_a {
+                text-decoration: none;
+                /* Отменяем подчеркивание у ссылки */
+                color: #F8D8D8;
+                font-family: 'Roboto', sans-serif;
+                font-size: 0rem;
+                letter-spacing: 5%;
+            }
+        }
+        
+        @media all and (max-width: 658px) and (min-width: 444px) {
+            .banner-img {
+                margin: auto;
+                margin-bottom: 5rem;
+                padding: 10rem;
+                position: relative;
+                background-repeat: no-repeat;
+                background-position-x: center;
+                width: 0rem;
+                background-image: url(src/images/girl.svg);
+            }
+            .banner {
+                background-color: #F8D8D8;
+                text-align: center;
+                margin-bottom: 5rem;
+                padding: 10rem;
+                position: relative;
+                right: 10rem;
+            }
+            h1 {
+                font-size: 18px;
+                top: 2rem;
+                text-align: center;
+            }
+            p1 {
+                font-size: 16px;
+                top: 5rem;
+                bottom: 8rem;
+                text-align: center;
+            }
+            .button {
+                margin: .1rem;
+                padding: 2rem;
+                font-size: 1.2rem;
+                text-align: center;
+            }
+            .button-1 {
+                margin: .5rem;
+                padding: 2rem;
+                font-size: 1.2rem;
+            }
+            form,
+            .form_result {
+                width: 30rem;
+                height: 45rem;
+            }
+            .input__text {
+                margin: .7rem;
+                padding: 1.5rem;
+            }
+            .checkbox__group {
+                margin: 1.5rem;
+                padding: 2rem;
+            }
+            .select__head::after {
+                width: 20px;
+                height: 10px;
+                background: url("src/images/select.svg") no-repeat center / cover;
+                position: absolute;
+                left: 90%;
+                bottom: 4rem;
+                transform: translateY(50%);
+                content: '';
+                display: block;
+                transition: .2s ease-in;
+            }
+            .select__head.open::after {
+                transform: translateY(50%) rotate(180deg);
+            }
+            .select__list {
+                display: none;
+                position: absolute;
+                color: #F2F2F2;
+                left: 0.5;
+                right: 0.5;
+                background: #F2F2F2;
+                box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                margin-top: 5px;
+                width: 95%;
+                overflow-x: hidden;
+                overflow-y: auto;
+                z-index: 100;
+                margin: 0;
+                padding: 0;
+                font-size: 18px;
+                color: #424348;
+                scrollbar-color: dark;
+                scrollbar-width: thin;
+                overscroll-behavior: contain;
+            }
+            .header {
+                background-color: #F8D8D8;
+            }
+            .control_a {
+                text-decoration: none;
+                /* Отменяем подчеркивание у ссылки */
+                color: #F8D8D8;
+                font-family: 'Roboto', sans-serif;
+                font-size: 0rem;
+                letter-spacing: 5%;
+            }
+        }
+        
+        @media all and (max-width: 444px) {
+            .banner-img {
+                margin: auto;
+                margin-bottom: 5rem;
+                padding: 10rem;
+                position: relative;
+                background-repeat: no-repeat;
+                background-position-x: center;
+                width: 0rem;
+                background-image: url(src/images/girl.svg);
+            }
+            .banner {
+                background-color: #F8D8D8;
+                text-align: center;
+                margin-bottom: 5rem;
+                padding: 10rem;
+                position: relative;
+                right: 10rem;
+            }
+            h1 {
+                font-size: 12px;
+                top: 2rem;
+                text-align: center;
+            }
+            p1 {
+                font-size: 10px;
+                top: 5rem;
+                bottom: 8rem;
+                text-align: center;
+            }
+            .button {
+                margin: .1rem;
+                padding: 2rem;
+                font-size: 1.2rem;
+                text-align: center;
+            }
+            .button-1 {
+                margin: .5rem;
+                padding: 2rem;
+                font-size: 1.2rem;
+            }
+            form,
+            .form_result {
+                width: 20rem;
+                height: 45rem;
+            }
+            .input__text {
+                margin: .7rem;
+                padding: 1.5rem;
+            }
+            .checkbox__group {
+                margin: 1.5rem;
+                padding: 2rem;
+            }
+            .select__head::after {
+                width: 20px;
+                height: 10px;
+                background: url("src/images/select.svg") no-repeat center / cover;
+                position: absolute;
+                left: 90%;
+                bottom: 4rem;
+                transform: translateY(50%);
+                content: '';
+                display: block;
+                transition: .2s ease-in;
+            }
+            .select__head.open::after {
+                transform: translateY(50%) rotate(180deg);
+            }
+            .select__list {
+                display: none;
+                position: absolute;
+                color: #F2F2F2;
+                left: 0.5;
+                right: 0.5;
+                background: #F2F2F2;
+                box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                margin-top: 5px;
+                width: 95%;
+                overflow-x: hidden;
+                overflow-y: auto;
+                z-index: 100;
+                margin: 0;
+                padding: 0;
+                font-size: 18px;
+                color: #424348;
+                scrollbar-color: dark;
+                scrollbar-width: thin;
+                overscroll-behavior: contain;
+            }
+            .header {
+                background-color: #F8D8D8;
+            }
+            .control_a {
+                text-decoration: none;
+                /* Отменяем подчеркивание у ссылки */
+                color: #F8D8D8;
+                font-family: 'Roboto', sans-serif;
+                font-size: 0rem;
+                letter-spacing: 5%;
+            }
+        }
+        
+        @media all and (max-width: 325px) {
+            .banner-img {
+                margin: auto;
+                margin-bottom: 3rem;
+                padding: 7rem;
+                position: relative;
+                background-repeat: no-repeat;
+                background-position-x: center;
+                width: 0rem;
+                background-image: url(src/images/girl.svg);
+            }
+            .banner {
+                background-color: #F8D8D8;
+                text-align: center;
+                margin-bottom: 5rem;
+                padding: 10rem;
+                position: relative;
+                right: 10rem;
+            }
+            h1 {
+                font-size: 12px;
+                top: 2rem;
+                text-align: center;
+            }
+            p1 {
+                font-size: 4px;
+                top: 5rem;
+                bottom: 8rem;
+                text-align: center;
+            }
+            .button {
+                margin: .1rem;
+                padding: .3rem;
+                font-size: 1.2rem;
+                text-align: center;
+            }
+            .button-1 {
+                margin: .5rem;
+                padding: 1rem;
+                font-size: .3rem;
+                border-radius: .3rem;
+            }
+            form,
+            .form_result {
+                width: 20rem;
+                height: 45rem;
+            }
+            .input__text {
+                margin: .7rem;
+                padding: 1.5rem;
+            }
+            .checkbox__group {
+                margin: 1.5rem;
+                padding: 2rem;
+            }
+            .select__head::after {
+                width: 20px;
+                height: 10px;
+                background: url("src/images/select.svg") no-repeat center / cover;
+                position: absolute;
+                left: 90%;
+                bottom: 4rem;
+                transform: translateY(50%);
+                content: '';
+                display: block;
+                transition: .2s ease-in;
+            }
+            .select__head.open::after {
+                transform: translateY(50%) rotate(180deg);
+            }
+            .select__list {
+                display: none;
+                position: absolute;
+                color: #F2F2F2;
+                left: 0.5;
+                right: 0.5;
+                background: #F2F2F2;
+                box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                margin-top: 5px;
+                width: 95%;
+                overflow-x: hidden;
+                overflow-y: auto;
+                z-index: 100;
+                margin: 0;
+                padding: 0;
+                font-size: 18px;
+                color: #424348;
+                scrollbar-color: dark;
+                scrollbar-width: thin;
+                overscroll-behavior: contain;
+            }
+            .header {
+                background-color: #F8D8D8;
+            }
+            .control_a {
+                text-decoration: none;
+                /* Отменяем подчеркивание у ссылки */
+                color: #F8D8D8;
+                font-family: 'Roboto', sans-serif;
+                font-size: 0rem;
+                letter-spacing: 5%;
+            }
+        }
+    </style>
+
+    <body></body>
+    <header>
+        <div class="header"> <img class="header-img" src="src/images/logo.svg" alt="logo">
+            <ul class="control">
+                <li class="control-item"><a class="control_a" href="https://www.youtube.com/">Cкачать приложение</a></li>
+            </ul>
+        </div>
+    </header>
+    <section class="section-banner">
+        <div class="container">
+            <div class="banner">
+                <div class="size"> <img class="banner-img" src="src/images/girls.svg" alt="girls">
+                    <h1> CaloriesEveryDay</h1>
+                    <p1 class="banner_p"> Получи фигуру мечты без тренировок! </p1>
+                </div>
+                <center><a class="button-1" href="#section">Заполни форму и получи план питания</a></center>
+            </div>
+        </div>
+        <section class="section">
+            <div class="container">
+                <div class="calculator">
+                    <section id="section"></section>
+                    <form onsubmit="onSubmitForm(event)">
+                        <input class="input__text" id="userAge" type="number" min="0" max="100" required name="years" placeholder="Возраст">
+                        <div class="checkbox__group">
+                            <input class="custom-radio" type="radio" id="1" name="pol" value="M">
+                            <label class="checkbox__label" for="1">Мужской   </label>
+                            <input class="custom-radio" type="radio" id="2" name="pol" value="Ж">
+                            <label class="checkbox__label" for="2">Женский          </label>
+                        </div>
+                        <input class="input__text" type="number" min="30" max="100" required name="weight" placeholder="Вес">
+                        <input class="input__text" type="number" min="130" max="210" required name="growth" placeholder="Рост"><input class="select__input" type="hidden" name="">
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                        <div class="select">
+                            <input class="select__input" type="hidden" name="">
+                            <div class="select__head">Выберите</div>
+                            <ul class="select__list" style="display: none;">
+                                <li class="select__item">Сидячий образ жизни</li>
+                                <li class="select__item">Тренировки 2-3 раза в неделю</li>
+                                <li class="select__item">Тренировки 4-5 раз в неделю</li>
+                            </ul>
+                            <script>
+                                jQuery(($) => {
+                                    $('.select').on('click', '.select__head', function() {
+                                        if ($(this).hasClass('open')) {
+                                            $(this).removeClass('open');
+                                            $(this).next().fadeOut();
+                                        } else {
+                                            $('.select__head').removeClass('open');
+                                            $('.select__list').fadeOut();
+                                            $(this).addClass('open');
+                                            $(this).next().fadeIn();
+                                        }
+                                    });
+
+                                    $('.select').on('click', '.select__item', function() {
+                                        $('.select__head').removeClass('open');
+                                        $(this).parent().fadeOut();
+                                        $(this).parent().prev().text($(this).text());
+                                        $(this).parent().prev().prev().val($(this).text());
+                                    });
+
+                                    $(document).click(function(e) {
+                                        if (!$(e.target).closest('.select').length) {
+                                            $('.select__head').removeClass('open');
+                                            $('.select__list').fadeOut();
+                                        }
+                                    });
+                                });
+                            </script>
+                        </div>
+                        <button class='button-1' type="submit" onmousedown="viewDiv()">Рассчитать</button>
+                    </form>
+                    <div id="div1">
+                        <section class="section_result">
+                            <form class="form_result">
+                                <div class="result_div">
+                                    <!--p(id="showResult")--><span>Поддержание веса  ккал/день</span><br>
+                                </div>
+                                <div class="result_div"><span>Сбросить вес - ккал/день</span><br></div>
+                                <div class="result_div"><span>Быстрая потеря веса - ккал/день</span><br></div>
+                                <input class="button-1" type="button" value="Получи план питания на неделю">
+                            </form>
+                        </section>
+                        <section class="section_foodplan">
+                            <label class="label_foodplan">Рацион на 2000 ккал/день </label>
+                            <div class="foodplan">
+                                <h3>Завтрак: </h3>
+                                <p>овсяная каша с фруктами, ломтик сыра/творожные сырники с диетическим джемом/фруктовый йогурт и фрукт.</p>
+                                <img class="image_result" src="src/images/1.svg" alt="1">
+                            </div>
+                            <div class="foodplan">
+                                <h3>Второй завтрак или ланч: </h3>
+                                <p>фрукт/горсть орехов/йогурт/пара хлебцев.</p><img class="image_result" src="src/images/2.png" alt="2">
+                            </div>
+                            <div class="foodplan">
+                                <h3>Обед: </h3>
+                                <p>кусок вареной рыбы, овощной салат, отварной рис/греча, запеченная курица, томат.</p><img class="image_result" src="src/images/3.png" alt="3">
+                            </div>
+                            <div class="foodplan">
+                                <h3>Ужин: </h3>
+                                <p>творог/куриная грудка/отварная рыба/овощной салат.</p><img class="image_result" src="src/images/4.png" alt="4">
+                            </div>
+                            <input class="button" type="button" value="Получи план питания на неделю">
+                        </section>
+                    </div>
+
+
+
+                    <script>
+                        function viewDiv() {
+                            document.getElementById("div1").style.display = "block";
+                        };
+
+                        // В этой переменной у нас находится элемент, в котором мы будем выводить результат вычислений
+                        const showResultElement = document.getElementById('showResult')
+                            // В этой переменной у нас находится элемент, в котором пользователь указывает свой возраст
+                        const userAgeElement = document.getElementById('userAge')
+
+                        // Эта функция срабатывает только тогда, когда все поля в твоей форме "валидны"
+                        function onSubmitForm(event) {
+                            // Эта строчка кода означает, что мы отключаем поведение браузера "по-умолчание", чтобы реализовать свою логику
+                            event.preventDefault()
+
+                            // Берем значение у инпута, где пользователь указывал свой возраст
+                            const userAgeValue = userAgeElement.value
+
+                            if (userAgeValue >= 40) {
+                                // Тут ты выводишь нужную тебе информацию
+                                showResultElement.textContent = 'Ты старый пердун'
+                            } else {
+                                showResultElement.textContent = 'Ты молодой и у тебя все впереди'
+                            }
+                        }
+                    </script>
+</head>
+
+</html>
