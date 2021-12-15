@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ced</string>
+    <string name="title_activity_main">ced</string>
+    <string name="package_name">com.mssnatashka.ced</string>
+    <string name="custom_url_scheme">com.mssnatashka.ced</string>
+</resources>

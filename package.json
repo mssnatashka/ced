@@ -1,16 +1,10 @@
 {
-  "name": "ced",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "jstransformer-markdown-it": "^2.1.0",
-    "pug": "^3.0.2"
+    "@capacitor/android": "^3.3.3",
+    "@capacitor/core": "^3.3.3",
+    "@capacitor/ios": "^3.3.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^3.3.3"
   }
 }
