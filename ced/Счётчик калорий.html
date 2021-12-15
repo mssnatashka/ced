@@ -11,12 +11,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <script type="text/javascript" src="./jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="./jquery-1.9.1.js.Без названия"></script>
 
     <link rel="stylesheet" type="text/css" href="./result-light.css">
 
     <link rel="stylesheet" type="text/css" href="./bootstrap.css">
-    <script type="text/javascript" src="./bootstrap.min.js"></script>
+    <script type="text/javascript" src="./bootstrap.min.js.Без названия"></script>
 
     <meta charset="utf-8">
 
@@ -283,7 +283,6 @@
             background-image: url(src/images/food.svg);
             background-position: center;
             background-size: contain;
-            width: 100%;
         }
         
         .banner {
@@ -296,7 +295,7 @@
             position: relative;
             padding-bottom: 10rem;
             width: 100%;
-            height: 55%;
+            height: 100%;
         }
         
         h1 {
@@ -317,7 +316,7 @@
         
         .banner-img {
             margin: auto;
-            padding: 2rem;
+            padding: 5rem;
             position: relative;
             background-repeat: no-repeat;
             background-position-x: center;
@@ -348,31 +347,6 @@
             width: 35rem;
             padding-left: 3rem;
             padding-right: 3rem;
-        }
-        
-        .button-3 {
-            vertical-align: top;
-            margin-top: 5rem;
-            text-decoration: none;
-            background: none;
-            border: 0;
-            margin: 5.5rem;
-            padding: 2rem;
-            border-radius: 1.5rem;
-            font-family: inherit;
-            font-size: inherit;
-            position: relative;
-            appearance: none;
-            font-size: 18px;
-            font-family: 'Roboto', sans-serif;
-            border: none;
-            color: white;
-            background-color: #FF0B63;
-            letter-spacing: 50%;
-            width: 35rem;
-            padding-left: 13rem;
-            padding-right: 13rem;
-            margin-top: 100rem;
         }
         
         #d2000,
@@ -763,7 +737,7 @@
             }
         }
         
-        @media all and (min-width: 790px) and (max-width: 949px) {
+        @media all and (min-width: 770px) and (max-width: 949px) {
             .banner-img {
                 margin: auto;
                 padding: 5rem;
@@ -782,56 +756,164 @@
             }
             .banner {
                 margin-bottom: 3rem;
-                width: 100%;
             }
         }
         
-        @media all and (max-width: 789px) and (min-width: 444px) {
-            html {
-                width: 100%;
-            }
+        @media all and (max-width: 769px) and (min-width: 658px) {
             .banner-img {
-                margin: 5rem;
+                margin: auto;
                 margin-bottom: 5rem;
-                padding: 10rem;
-                padding-right: 0;
+                padding: 15rem;
                 position: relative;
                 background-repeat: no-repeat;
                 background-position-x: center;
                 width: 0rem;
                 background-image: url(src/images/girl.svg);
             }
-            .banner-p {
-                width: 100%;
+            .btn-group.open .btn.dropdown-toggle {
+                background-color: #F2F2F2;
+                width: 30rem;
+                left: 2rem;
             }
-            .button-3 {
-                vertical-align: top;
-                margin-top: 5rem;
-                text-decoration: none;
-                background: none;
-                border: 0;
-                margin: 1.2rem;
-                padding: 2rem;
-                border-radius: 1.5rem;
-                font-family: inherit;
-                font-size: inherit;
+            .btn-group>.btn:first-child,
+            .btn-group.open .btn.dropdown-toggle {
+                background-color: #F2F2F2;
+                width: 31.5rem;
+                left: 2rem;
+            }
+            .btn-group>.btn:first-child {
+                margin-left: 0;
+                width: 31.5rem;
+            }
+            .dropdown-menu {
+                width: 36rem;
+            }
+            .banner {
+                background-color: #F8D8D8;
+                text-align: center;
+                margin-bottom: 5rem;
+                padding: 10rem;
                 position: relative;
-                appearance: none;
+                right: 10rem;
+            }
+            h1 {
+                font-size: 18px;
+                top: 2rem;
+            }
+            p {
+                margin-left: 5rem;
+                font-size: 2rem;
+            }
+            p2 {
+                font-size: 2rem;
+                color: #4B5265;
+            }
+            p1 {
+                color: #4B5265;
+                font-size: 1.6rem;
+                top: 5rem;
+                bottom: 8rem;
+            }
+            .button {
+                margin: .3rem;
+                padding: 2rem;
+                font-size: 1.5rem;
+                left: 3rem;
+                width: 36rem;
+                margin-top: 2.5rem;
+            }
+            .button-1 {
+                margin: .5rem;
+                padding: 2rem;
                 font-size: 1.2rem;
+            }
+            .form {
+                width: 40rem;
+                height: 57rem;
+            }
+            .counter__result {
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%, 10%);
+                padding: 4rem;
+                background-color: #F8D8D8;
+                width: 40rem;
+                height: 25rem;
+                position: relative;
+                border-radius: 1.5rem;
+                margin-bottom: 4rem;
+                color: #3F3D56;
+            }
+            .checkbox__group {
+                margin: 1.5rem;
+                padding: 2rem;
+            }
+            .caret::after {
+                width: 20px;
+                height: 10px;
+                background: url("src/images/select.svg") no-repeat center / cover;
+                position: absolute;
+                left: 90%;
+                bottom: 3.2rem;
+                transform: translateY(50%);
+                content: '';
+                display: block;
+                transition: .2s ease-in;
+            }
+            .caret.open::after {
+                transform: translateY(50%) rotate(180deg);
+            }
+            .select__list {
+                display: none;
+                position: absolute;
+                color: #F2F2F2;
+                left: 0.5;
+                right: 0.5;
+                background: #F2F2F2;
+                box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                margin-top: 5px;
+                width: 95%;
+                overflow-x: hidden;
+                overflow-y: auto;
+                z-index: 100;
+                margin: 0;
+                padding: 0;
+                font-size: 18px;
+                color: #424348;
+                scrollbar-color: dark;
+                scrollbar-width: thin;
+                overscroll-behavior: contain;
+            }
+            .header {
+                background-color: #F8D8D8;
+            }
+            .control_a {
+                text-decoration: none;
+                /* Отменяем подчеркивание у ссылки */
+                color: #F8D8D8;
                 font-family: 'Roboto', sans-serif;
-                border: none;
-                color: white;
-                background-color: #FF0B63;
-                letter-spacing: 50%;
-                width: 35rem;
-                padding-left: 5rem;
-                padding-right: 5rem;
+                font-size: 0rem;
+                letter-spacing: 5%;
+            }
+        }
+        
+        @media all and (max-width: 658px) and (min-width: 444px) {
+            .banner-img {
+                margin: auto;
+                margin-bottom: 5rem;
+                padding: 10rem;
+                position: relative;
+                background-repeat: no-repeat;
+                background-position-x: center;
+                width: 0rem;
+                background-image: url(src/images/girl.svg);
             }
             .btn-group>.btn:first-child,
             .btn-group.open .btn.dropdown-toggle {
                 background-color: #F2F2F2;
                 width: 28rem;
-                left: 1rem;
+                left: 2rem;
             }
             .btn-group>.btn:first-child {
                 margin-left: 0;
@@ -845,30 +927,26 @@
             label,
             .valueOfButton,
             .input {
-                font-size: 1.4rem;
+                font-size: 1.3rem;
             }
             .banner {
                 background-color: #F8D8D8;
+                text-align: center;
                 margin-bottom: 5rem;
                 padding: 10rem;
-                padding-right: 0;
                 position: relative;
                 right: 10rem;
-                width: 100%;
             }
             h1 {
                 font-size: 18px;
                 top: 2rem;
-                align-content: center;
-                left: 10rem;
-                width: 88%;
+                text-align: center;
             }
             p1 {
                 font-size: 16px;
                 top: 5rem;
                 bottom: 8rem;
-                left: 10rem;
-                width: 88%;
+                text-align: center;
             }
             p {
                 margin-left: 5rem;
@@ -883,22 +961,19 @@
                 margin-top: 2.5rem;
                 padding: 2rem;
                 font-size: 1.2rem;
-                left: 2rem;
+                left: 3rem;
                 width: 32.5rem;
             }
             .button-1 {
                 margin: .5rem;
                 padding: 2rem;
-                font-size: 1.6rem;
+                font-size: 1.2rem;
             }
             .button-2 {
                 margin: .5rem;
                 padding: 2rem;
                 font-size: 1.2rem;
                 width: 32.5rem;
-            }
-            input {
-                right: 1.3rem;
             }
             .form {
                 width: 36rem;
@@ -942,172 +1017,77 @@
         }
         
         @media all and (max-width: 444px) {
-            html {
-                width: 100%;
-            }
             .banner-img {
-                margin: 5rem;
+                margin: auto;
                 margin-bottom: 5rem;
                 padding: 10rem;
-                padding-right: 0;
                 position: relative;
                 background-repeat: no-repeat;
                 background-position-x: center;
                 width: 0rem;
                 background-image: url(src/images/girl.svg);
             }
-            .banner-p {
-                width: 100%;
-            }
-            .button-3 {
-                vertical-align: top;
-                margin-top: 5rem;
-                text-decoration: none;
-                background: none;
-                border: 0;
-                margin: 0rem;
-                padding: 2rem;
-                border-radius: 1.5rem;
-                font-family: inherit;
-                font-size: inherit;
-                position: relative;
-                appearance: none;
-                font-size: 1.2rem;
-                font-family: 'Roboto', sans-serif;
-                border: none;
-                color: white;
-                background-color: #FF0B63;
-                letter-spacing: 50%;
-                width: 35rem;
-                padding-left: 5rem;
-                padding-right: 5rem;
-            }
             .btn-group>.btn:first-child,
             .btn-group.open .btn.dropdown-toggle {
                 background-color: #F2F2F2;
-                width: 21.75rem;
-                left: -3rem;
-                height: 2rem;
+                width: 23rem;
+                left: 2rem;
             }
             .btn-group>.btn:first-child {
-                width: 21.75rem;
-                height: 2rem;
+                margin-left: 0;
+                width: 23rem;
+                height: 2.7rem;
             }
             .dropdown-menu {
-                width: 25rem;
-                font-size: .4rem;
-                left: -10%;
+                width: 27rem;
+                font-size: 1.2rem;
             }
             label,
             .valueOfButton,
             .input {
-                font-size: 1.4rem;
+                font-size: 1.1rem;
             }
             .banner {
                 background-color: #F8D8D8;
+                text-align: center;
                 margin-bottom: 5rem;
                 padding: 10rem;
-                padding-right: 0;
                 position: relative;
                 right: 10rem;
-                width: 100%;
-            }
-            .banner_p {
-                width: 75%;
             }
             h1 {
-                font-size: 2rem;
+                font-size: 12px;
                 top: 2rem;
-                align-content: center;
-                left: 10rem;
-                width: 75%;
+                text-align: center;
             }
             p1 {
-                font-size: 1.6rem;
+                font-size: 10px;
                 top: 5rem;
                 bottom: 8rem;
-                left: 10rem;
-                width: 80%;
-            }
-            h3 {
-                font-size: 1.8rem;
-            }
-            label {
-                font-size: 1.4rem;
-                padding: 1rem;
-            }
-            p {
-                margin-left: 1rem;
-                font-size: 1.4rem;
-            }
-            p2 {
-                font-size: 1.6rem;
-                color: #4B5265;
-            }
-            span2 {
-                font-size: 1.2rem;
+                text-align: center;
             }
             .button {
                 margin: .3rem;
                 margin-top: 2.5rem;
                 padding: 2rem;
-                font-size: 1.4rem;
-                left: -2rem;
-                width: 26rem;
+                font-size: 1.2rem;
+                left: 3rem;
+                width: 27.5rem;
             }
             .button-1 {
                 margin: .5rem;
                 padding: 2rem;
-                font-size: 1.4rem;
-            }
-            .caret::after {
-                width: 20px;
-                height: 10px;
-                background: url(src/images/select.svg) no-repeat center / cover;
-                position: absolute;
-                left: 89%;
-                bottom: 3rem;
-                transform: translateY(50%);
-                content: '';
-                display: block;
-                transition: .2s ease-in;
+                font-size: 1.2rem;
             }
             .button-2 {
                 margin: .5rem;
                 padding: 2rem;
-                top: 5rem;
                 font-size: 1.2rem;
-                width: 32.5rem;
-            }
-            input {
-                right: 3rem;
-                padding: 2rem;
-                padding-right: 6.5rem;
-                right: 5rem;
-            }
-            .valueOfButton {
-                font-size: 1.4rem;
-                padding-right: 15rem;
-                left: 10rem;
-                width: 80%;
-                padding-bottom: 15rem;
+                width: 34rem;
             }
             .form {
-                width: 23rem;
+                width: 30rem;
                 height: 57rem;
-                margin: 0;
-                margin-bottom: 5rem;
-                left: 50%;
-            }
-            .section_foodplan {
-                font-size: 1.8rem;
-                font-family: 'Open Sans', sans-serif;
-                position: absolute;
-                left: 47%;
-                transform: translate(-45%, 5%);
-                padding: 2rem;
-                text-align: center;
-                width: 80%;
             }
             .counter__result {
                 position: absolute;
@@ -1115,9 +1095,8 @@
                 transform: translate(-50%, 10%);
                 padding: 4rem;
                 background-color: #F8D8D8;
-                width: 23rem;
-                height: 20rem;
-                left: 50%;
+                width: 30rem;
+                height: 25rem;
                 position: relative;
                 border-radius: 1.5rem;
                 margin-bottom: 4rem;
@@ -1131,6 +1110,43 @@
                 margin: 1.5rem;
                 padding: 2rem;
             }
+            .select__head::after {
+                width: 20px;
+                height: 10px;
+                background: url("src/images/select.svg") no-repeat center / cover;
+                position: absolute;
+                left: 90%;
+                bottom: 4rem;
+                transform: translateY(50%);
+                content: '';
+                display: block;
+                transition: .2s ease-in;
+            }
+            .select__head.open::after {
+                transform: translateY(50%) rotate(180deg);
+            }
+            .select__list {
+                display: none;
+                position: absolute;
+                color: #F2F2F2;
+                left: 0.5;
+                right: 0.5;
+                background: #F2F2F2;
+                box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                margin-top: 5px;
+                width: 95%;
+                overflow-x: hidden;
+                overflow-y: auto;
+                z-index: 100;
+                margin: 0;
+                padding: 0;
+                font-size: 18px;
+                color: #424348;
+                scrollbar-color: dark;
+                scrollbar-width: thin;
+                overscroll-behavior: contain;
+            }
             .header {
                 background-color: #F8D8D8;
             }
@@ -1141,9 +1157,6 @@
                 font-family: 'Roboto', sans-serif;
                 font-size: 0rem;
                 letter-spacing: 5%;
-            }
-            .label_foodplan {
-                font-size: 1.8rem;
             }
         }
     </style>
@@ -1164,7 +1177,7 @@
             <div class="banner">
                 <div class="size"> <img class="banner-img" src="src/images/girls.svg" alt="girls">
                     <h1> CaloriesEveryDay</h1>
-                    <p1 class="banner_p"> Получи фигуру мечты <br>без тренировок! </p1>
+                    <p1 class="banner_p"> Получи фигуру мечты без тренировок! </p1>
                 </div>
                 <center><a class="button-1" href="#1">Заполни форму и получи план питания</a></center>
             </div>
@@ -1209,11 +1222,11 @@
                             <div class="btn-group">
                                 <span class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                     <span class="caret"></span>
-                                <span class="valueOfButton">Нет физических нагрузок</span>
+                                <span class="valueOfButton">Выберите</span>
                                 </span>
                                 <ul class="dropdown-menu">
                                     <li><input class="custom-radio2" id="activity-minimal" name="activity" value="min" type="radio" checked="" required="">
-                                        <label for="activity-minimal"> Нет физических нагрузок </label></li>
+                                        <label for="activity-minimal"> Сидячая работа и нет физических нагрузок </label></li>
                                     <li><input class="custom-radio2" id="activity-low" name="activity" value="low" type="radio" required="">
                                         <label for="activity-low"> Нерегулярные тренировки </label></li>
                                     <li><input class="custom-radio2" id="activity-medium" name="activity" value="medium" type="radio" required="">
@@ -1387,27 +1400,26 @@
                             <label class="label_foodplan">Рацион на 2000 ккал/день </label>
                             <br>
                             <br>
-                            <p2>Для снижения веса откажитесь от соленого и мучного</p2><br>
+                            <p2>Для снижения веса откажитесь от соленого и мучного</p2>
                             <p2>Для набора веса добавьте продукты,содержащие белок</p2>
                             <div class="foodplan">
                                 <h3>Завтрак: </h3>
-                                <p2>овсяная каша с фруктами, ломтик сыра/творожные сырники с диетическим джемом/фруктовый йогурт и фрукт</p2><br>
-                                <img class="image_result" src="src/images/menu/1.png" alt="1">
+                                <p2>овсяная каша с фруктами, ломтик сыра/творожные сырники с диетическим джемом/фруктовый йогурт и фрукт</p2>
+                                <img class="image_result" src="src/images/меню/1.png" alt="1">
                             </div>
                             <div class="foodplan">
                                 <h3>Второй завтрак или ланч: </h3>
-                                <p2>фрукт/горсть орехов/йогурт/пара хлебцев</p2><br><img class="image_result" src="src/images/menu/2.png" alt="2">
+                                <p2>фрукт/горсть орехов/йогурт/пара хлебцев</p2><img class="image_result" src="src/images/меню/2.png" alt="2">
                             </div>
                             <div class="foodplan">
                                 <h3>Обед: </h3>
-                                <p2>кусок вареной рыбы, овощной салат, отварной рис/греча, запеченная курица, томат</p2><br><img class="image_result" src="src/images/menu/3.png" alt="3">
+                                <p2>кусок вареной рыбы, овощной салат, отварной рис/греча, запеченная курица, томат</p2><img class="image_result" src="src/images/меню/3.png" alt="3">
                             </div>
                             <div class="foodplan">
                                 <h3>Ужин: </h3>
-                                <p2>творог/куриная грудка/отварная рыба/овощной салат</p2><br><img class="image_result" src="src/images/menu/4.png" alt="4">
+                                <p2>творог/куриная грудка/отварная рыба/овощной салат</p2><img class="image_result" src="src/images/меню/4.png" alt="4">
                             </div>
-                            <br><br>
-                            <center><a class="button-3" href="#1">Посчитать заново</a></center>
+                            <input class="button-2" type="button" value="Получи индивидуальный план питания" onmousedown="viewDiv()">
 
                         </section>
                     </div>
@@ -1416,27 +1428,26 @@
                             <label class="label_foodplan">Рацион на 1100 ккал/день </label>
                             <br>
                             <br>
-                            <p2>Для снижения веса откажитесь от соленого и мучного</p2><br>
+                            <p2>Для снижения веса откажитесь от соленого и мучного</p2>
                             <p2>Для набора веса добавьте продукты,содержащие белок</p2>
                             <div class="foodplan">
                                 <h3>Завтрак: </h3>
-                                <p2>Овсяноблин с творогом и бананом и цикорий с обезжиренным молоком</p2><br>
-                                <img class="image_result" src="src/images/menu/1100_1.png" alt="1">
+                                <p2>Овсяноблин с творогом и бананом и цикорий с обезжиренным молоком</p2>
+                                <img class="image_result" src="src/images/меню/1100_1.png" alt="1">
                             </div>
                             <div class="foodplan">
                                 <h3>Второй завтрак или ланч: </h3>
-                                <p2> грейпфрут — 250 г, грецкие орехи – 7 г</p2><br><img class="image_result" src="src/images/menu/1100_2.png" alt="2">
+                                <p2> грейпфрут — 250 г, грецкие орехи – 7 г</p2><img class="image_result" src="src/images/меню/1100_2.png" alt="2">
                             </div>
                             <div class="foodplan">
                                 <h3>Обед: </h3>
-                                <p2>омлет с грибами: яйцо — 2 шт., грибное ассорти — 50 г, томат — 110 г, лук репчатый</p2><br><img class="image_result" src="src/images/menu/1100_3.png" alt="3">
+                                <p2>омлет с грибами: яйцо — 2 шт., грибное ассорти — 50 г, томат — 110 г, лук репчатый</p2><img class="image_result" src="src/images/меню/1100_3.png" alt="3">
                             </div>
                             <div class="foodplan">
                                 <h3>Ужин: </h3>
-                                <p2>напиток из шиповника (или травяной чай)</p2><br><img class="image_result" src="src/images/menu/1100_4.png" alt="4">
+                                <p2>напиток из шиповника (или травяной чай)</p2><img class="image_result" src="src/images/меню/1100_4.png" alt="4">
                             </div>
-                            <br><br>
-                            <center><a class="button-3" href="#1">Посчитать заново</a></center>
+                            <input class="button-2" type="button" value="Получи индивидуальный план питания" onmousedown="viewDiv()">
 
                         </section>
                     </div>
@@ -1451,28 +1462,27 @@
                             <label class="label_foodplan">Рацион на 1400 ккал/день </label>
                             <br>
                             <br>
-                            <p2>Для снижения веса откажитесь от соленого и мучного</p2><br>
+                            <p2>Для снижения веса откажитесь от соленого и мучного</p2>
                             <p2>Для набора веса добавьте продукты,содержащие белок</p2>
                             <div class="foodplan">
                                 <h3>Завтрак: </h3>
-                                <p2>каша с сухофруктами или свежими кусочками фруктов/ягод, стакан кефира</p><br>
-                                    <img class="image_result" src="src/images/menu/1400.png" alt="1">
+                                <p2>каша с сухофруктами или свежими кусочками фруктов/ягод, стакан кефира</p>
+                                    <img class="image_result" src="src/images/меню/1400.png" alt="1">
                             </div>
                             <div class="foodplan">
                                 <h3>Второй завтрак или ланч: </h3>
                                 <p2>кефир, нежирный йогурт, творог
-                                </p2><br><img class="image_result" src="src/images/menu/1400_2.png" alt="2">
+                                </p2><img class="image_result" src="src/images/меню/1400_2.png" alt="2">
                             </div>
                             <div class="foodplan">
                                 <h3>Обед: </h3>
-                                <p2>кусок мяса или рыбы с крупами</p2><br><img class="image_result" src="src/images/menu/1400_3.png" alt="3">
+                                <p2>кусок мяса или рыбы с крупами</p2><img class="image_result" src="src/images/меню/1400_3.png" alt="3">
                             </div>
                             <div class="foodplan">
                                 <h3>Ужин: </h3>
-                                <p2>Легкий овощной салат </p2><br><img class="image_result" src="src/images/menu/1400_4.png" alt="4">
+                                <p2>Легкий овощной салат </p2><img class="image_result" src="src/images/меню/1400_4.png" alt="4">
                             </div>
-                            <br><br>
-                            <center><a class="button-3" href="#1">Посчитать заново</a></center>
+                            <input class="button-2" type="button" value="Получи индивидуальный план питания" onmousedown="viewDiv()">
 
                         </section>
                     </div>
@@ -1484,27 +1494,26 @@
                             <label class="label_foodplan">Рацион на 1700 ккал/день </label>
                             <br>
                             <br>
-                            <p2>Для снижения веса откажитесь от соленого и мучного</p2><br>
+                            <p2>Для снижения веса откажитесь от соленого и мучного</p2>
                             <p2>Для набора веса добавьте продукты,содержащие белок</p2>
                             <div class="foodplan">
                                 <h3>Завтрак: </h3>
-                                <p2>Завтрак - 200 г рисовой каши на молоке, 50 г чернослива, стакан черного чая, мандарин</p2><br>
-                                <img class="image_result" src="src/images/menu/1700_1.png" alt="1">
+                                <p2>Завтрак - 200 г рисовой каши на молоке, 50 г чернослива, стакан черного чая, мандарин</p2>
+                                <img class="image_result" src="src/images/меню/1700_1.png" alt="1">
                             </div>
                             <div class="foodplan">
                                 <h3>Второй завтрак или ланч: </h3>
-                                <p2> 20 г орехов, киви</p2><br><img class="image_result" src="src/images/menu/1700_2.png" alt="2">
+                                <p2> 20 г орехов, киви</p2><img class="image_result" src="src/images/меню/1700_2.png" alt="2">
                             </div>
                             <div class="foodplan">
                                 <h3>Обед: </h3>
-                                <p2>250 г крем-супа из зеленого горошка со сливками, 150 г гречневой каши, 150 г филейной части курицы, компот из ягод</p2><br><img class="image_result" src="src/images/menu/1700_3.png" alt="3">
+                                <p2>250 г крем-супа из зеленого горошка со сливками, 150 г гречневой каши, 150 г филейной части курицы, компот из ягод</p2><img class="image_result" src="src/images/меню/1700_3.png" alt="3">
                             </div>
                             <div class="foodplan">
                                 <h3>Ужин: </h3>
-                                <p2>100 г индейки, 200 г салата из свежих сезонных овощей с зеленью и маслом </p2><br><img class="image_result" src="src/images/menu/1700_4.png" alt="4">
+                                <p2>100 г индейки, 200 г салата из свежих сезонных овощей с зеленью и маслом </p2><img class="image_result" src="src/images/меню/1700_4.png" alt="4">
                             </div>
-                            <br><br>
-                            <center><a class="button-3" href="#1">Посчитать заново</a></center>
+                            <input class="button-2" type="button" value="Получи индивидуальный план питания" onmousedown="viewDiv()">
 
                         </section>
                     </div>
@@ -1514,28 +1523,27 @@
                             <label class="label_foodplan">Рацион на 2300 ккал/день </label>
                             <br>
                             <br>
-                            <p2>Для снижения веса откажитесь от соленого и мучного</p2><br>
+                            <p2>Для снижения веса откажитесь от соленого и мучного</p2>
                             <p2>Для набора веса добавьте продукты,содержащие белок</p2>
                             <div class="foodplan">
                                 <h3>Завтрак: </h3>
-                                <p2>Каша гречневая рассыпчатая, сыр, йогурт и кофе с молоком</p2><br>
-                                <img class="image_result" src="src/images/menu/2300_1.png" alt="1">
+                                <p2>Каша гречневая рассыпчатая, сыр, йогурт и кофе с молоком</p2>
+                                <img class="image_result" src="src/images/меню/2300_1.png" alt="1">
                             </div>
                             <div class="foodplan">
                                 <h3>Второй завтрак или ланч: </h3>
-                                <p2> хлеб ржаной, творог, яблоко </p2><br><img class="image_result" src="src/images/menu/2300_2.png" alt="2">
+                                <p2> хлеб ржаной, творог, яблоко </p2><img class="image_result" src="src/images/меню/2300_2.png" alt="2">
                             </div>
                             <div class="foodplan">
                                 <h3>Обед: </h3>
                                 <p2>Щи свежие, хлеб зерновой, котлеты мясные паровые, картофель тушеный с зеленым горошком и цукини
-                                </p2><br><img class="image_result" src="src/images/menu/2300_3.png" alt="3">
+                                </p2><img class="image_result" src="src/images/меню/2300_3.png" alt="3">
                             </div>
                             <div class="foodplan">
                                 <h3>Ужин: </h3>
-                                <p2> Макароны с сыром, овощи гриль (кабачки, болгарский перец, баклажаны, томаты), фруктовый салат (персик, виноград, ананас, мандарин) </p2><br><img class="image_result" src="src/images/menu/2300_4.png" alt="4">
+                                <p2> Макароны с сыром, овощи гриль (кабачки, болгарский перец, баклажаны, томаты), фруктовый салат (персик, виноград, ананас, мандарин) </p2><img class="image_result" src="src/images/меню/2300_4.png" alt="4">
                             </div>
-                            <br><br>
-                            <center><a class="button-3" href="#1">Посчитать заново</a></center>
+                            <input class="button-2" type="button" value="Получи индивидуальный план питания" onmousedown="viewDiv()">
 
                         </section>
                     </div>
@@ -1545,28 +1553,27 @@
                             <label class="label_foodplan">Рацион на 2600 ккал/день </label>
                             <br>
                             <br>
-                            <p2>Для снижения веса откажитесь от соленого и мучного</p2><br>
+                            <p2>Для снижения веса откажитесь от соленого и мучного</p2>
                             <p2>Для набора веса добавьте продукты,содержащие белок</p2>
                             <div class="foodplan">
                                 <h3>Завтрак: </h3>
                                 <p2>Блины с обезжиренным творогом и изюмом с нежирной сметаной, салат из моркови, сельдерея и яблока с лимонным соком и растительным маслом, чай с лимоном</p2>
-                                <br><img class="image_result" src="src/images/menu/2600_1.png" alt="1">
+                                <img class="image_result" src="src/images/меню/2600_1.png" alt="1">
                             </div>
                             <div class="foodplan">
                                 <h3>Второй завтрак или ланч: </h3>
-                                <p2>Банан (150 г) и клубника (150 г)</p2><br><img class="image_result" src="src/images/menu/2600_2.png" alt="2">
+                                <p2>Банан (150 г) и клубника (150 г)</p2><img class="image_result" src="src/images/меню/2600_2.png" alt="2">
                             </div>
                             <div class="foodplan">
                                 <h3>Обед: </h3>
                                 <p2>Борщ вегетарианский, хлеб бородинский треска в томатном соусе с морковью и оливками, рис отварной, овощной салат (капуста белокочанная, укроп, сладкий перец, зеленый лук) с растительным маслом, компот из сухофруктов </p2>
-                                <br><img class="image_result" src="src/images/menu/2600_3.png" alt="3">
+                                <img class="image_result" src="src/images/меню/2600_3.png" alt="3">
                             </div>
                             <div class="foodplan">
                                 <h3>Ужин: </h3>
-                                <p2>Фасоль белая отварная, овощи тушеные (баклажаны, болгарский перец, помидоры, грибы, лук), хлеб грубого помола, желе фруктовое, чай</p2><br><img class="image_result" src="src/images/menu/2600_4.png" alt="4">
+                                <p2>Фасоль белая отварная, овощи тушеные (баклажаны, болгарский перец, помидоры, грибы, лук), хлеб грубого помола, желе фруктовое, чай</p2><img class="image_result" src="src/images/меню/2600_4.png" alt="4">
                             </div>
-                            <br><br>
-                            <center><a class="button-3" href="#1">Посчитать заново</a></center>
+                            <input class="button-2" type="button" value="Получи индивидуальный план питания" onmousedown="viewDiv()">
 
                         </section>
                     </div>
@@ -1577,27 +1584,26 @@
                             <label class="label_foodplan">Рацион на 2900 ккал/день </label>
                             <br>
                             <br>
-                            <p2>Для снижения веса откажитесь от соленого и мучного</p2><br>
+                            <p2>Для снижения веса откажитесь от соленого и мучного</p2>
                             <p2>Для набора веса добавьте продукты,содержащие белок</p2>
                             <div class="foodplan">
                                 <h3>Завтрак: </h3>
                                 <p2>Творог с йогуртом и фруктами</p2>
-                                <br><img class="image_result" src="src/images/menu/2900_1.png" alt="1">
+                                <img class="image_result" src="src/images/меню/2900_1.png" alt="1">
                             </div>
                             <div class="foodplan">
                                 <h3>Второй завтрак или ланч: </h3>
-                                <p2>Чизкейк по-домашнему, ягодный морс</p2><br><img class="image_result" src="src/images/menu/2900_2.png" alt="2">
+                                <p2>Чизкейк по-домашнему, ягодный морс</p2><img class="image_result" src="src/images/меню/2900_2.png" alt="2">
                             </div>
                             <div class="foodplan">
                                 <h3>Обед: </h3>
-                                <p2>Индейка запеченная в фольге и салат из дайкона с луком </p2><br><img class="image_result" src="src/images/menu/2900_3.png" alt="3">
+                                <p2>Индейка запеченная в фольге и салат из дайкона с луком </p2><img class="image_result" src="src/images/меню/2900_3.png" alt="3">
                             </div>
                             <div class="foodplan">
                                 <h3>Ужин: </h3>
-                                <p2>Запеченная рыба, запеканка картофельная с грибами </p2><br><img class="image_result" src="src/images/menu/2900_4.png" alt="4">
+                                <p2>Запеченная рыба, запеканка картофельная с грибами </p2><img class="image_result" src="src/images/меню/2900_4.png" alt="4">
                             </div>
-                            <br><br>
-                            <center><a class="button-3" href="#1">Посчитать заново</a></center>
+                            <input class="button-2" type="button" value="Получи индивидуальный план питания" onmousedown="viewDiv()">
 
                         </section>
                     </div>
@@ -1608,27 +1614,26 @@
                             <label class="label_foodplan">Рацион на 3200 ккал/день</label>
                             <br>
                             <br>
-                            <p2>Для снижения веса откажитесь от соленого и мучного</p2><br>
+                            <p2>Для снижения веса откажитесь от соленого и мучного</p2>
                             <p2>Для набора веса добавьте продукты,содержащие белок</p2>
                             <div class="foodplan">
                                 <h3>Завтрак: </h3>
                                 <p2>2 кусочка цельнозернового тоста с 1 ст. л. арахисового масла, 1 стакан йогурта, 2 яйца, 1/2 чашки овсянки, 1 стакан свежей клубник</p2>
-                                <br> <img class="image_result" src="src/images/menu/3200_1.png" alt="1">
+                                <img class="image_result" src="src/images/меню/3200_1.png" alt="1">
                             </div>
                             <div class="foodplan">
                                 <h3>Второй завтрак или ланч: </h3>
-                                <p2>1 чашка овощного сока, 85 г обезжиренного сыра, 1/4 чашки изюма, 10 цельнозерновых крекеров</p><br><img class="image_result" src="src/images/menu/3200_2.png" alt="2">
+                                <p2>1 чашка овощного сока, 85 г обезжиренного сыра, 1/4 чашки изюма, 10 цельнозерновых крекеров</p><img class="image_result" src="src/images/меню/3200_2.png" alt="2">
                             </div>
                             <div class="foodplan">
                                 <h3>Обед: </h3>
-                                <p2>85 г лосося на гриле, 1 чашка брокколи на пару, 1 чашка цельнозерновой пасты с 1 ст.л. соуса песто на основе оливкового масла</p2><br><img class="image_result" src="src/images/menu/3200_3.png" alt="3">
+                                <p2>85 г лосося на гриле, 1 чашка брокколи на пару, 1 чашка цельнозерновой пасты с 1 ст.л. соуса песто на основе оливкового масла</p2><img class="image_result" src="src/images/меню/3200_3.png" alt="3">
                             </div>
                             <div class="foodplan">
                                 <h3>Ужин: </h3>
-                                <p2> Запеченный сазан, диетический винегрет и чай</p2><br><img class="image_result" src="src/images/menu/3200_4.png" alt="4">
+                                <p2> Запеченный сазан, диетический винегрет и чай</p2><img class="image_result" src="src/images/меню/3200_4.png" alt="4">
                             </div>
-                            <br><br>
-                            <center><a class="button-3" href="#1">Посчитать заново</a></center>
+                            <input class="button-2" type="button" value="Получи индивидуальный план питания" onmousedown="viewDiv()">
 
                         </section>
                     </div>
