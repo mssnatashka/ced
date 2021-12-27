@@ -5,7 +5,7 @@
 <head>
     <title>CED: CaloriesEveryDay</title>
 
-
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow">
     <meta name="googlebot" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -283,6 +283,7 @@
         }
         
         body {
+            padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
             color: #4B5265;
             font-size: 1.6rem;
             font-family: 'Open Sans', sans-serif;
@@ -304,6 +305,7 @@
             padding-bottom: 10rem;
             width: 100%;
             height: 55%;
+            padding-top: 5rem;
         }
         
         h1 {
@@ -1017,7 +1019,7 @@
                 padding-right: 0;
                 position: relative;
                 right: 10rem;
-                width: 100%;
+                width: 108%;
             }
             .banner_p {
                 width: 75%;
@@ -1147,6 +1149,7 @@
             }
             .header {
                 background-color: #F8D8D8;
+                width: 100%;
             }
             .control_a {
                 text-decoration: none;
@@ -1227,9 +1230,9 @@
                                 </span>
                                 <ul class="dropdown-menu">
                                     <li><input class="custom-radio2" id="activity-minimal" name="activity" value="min" type="radio" checked="" required="">
-                                        <label for="activity-minimal"> Нет физических нагрузок </label></li>
+                                        <label for="activity-minimal"> Нет физических нагрузок   </label></li>
                                     <li><input class="custom-radio2" id="activity-low" name="activity" value="low" type="radio" required="">
-                                        <label for="activity-low"> Нерегулярные тренировки </label></li>
+                                        <label for="activity-low"> Нерегулярные тренировки    </label></li>
                                     <li><input class="custom-radio2" id="activity-medium" name="activity" value="medium" type="radio" required="">
                                         <label for="activity-medium"> Тренировки 3 раза в неделю</label></li>
                                     <li> <input class="custom-radio2" id="activity-high" name="activity" value="high" type="radio" required="">
