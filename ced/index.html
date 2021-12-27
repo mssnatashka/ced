@@ -21,6 +21,13 @@
     <meta charset="utf-8">
 
     <style>
+        html {
+            --ion-safe-area-top: env(safe-area-inset-top);
+            --ion-safe-area-bottom: env(safe-area-inset-bottom);
+            --ion-safe-area-left: env(safe-area-inset-left);
+            --ion-safe-area-right: env(safe-area-inset-right);
+        }
+        
         .counter {
             padding-top: 40px;
             padding-bottom: 50px;
@@ -1085,12 +1092,19 @@
                 padding-right: 6.5rem;
                 right: 5rem;
             }
+            .form__item3 {
+                width: 5rem;
+                padding: 0.35em 0.75em 0.625em;
+            }
             .valueOfButton {
                 font-size: 1.4rem;
-                padding-right: 15rem;
-                left: 10rem;
+                padding-right: 0;
+                padding-right: 2rem;
                 width: 80%;
                 padding-bottom: 15rem;
+            }
+            .btn-group {
+                width: 10%;
             }
             .form {
                 width: 23rem;
@@ -1201,7 +1215,7 @@
                             </div>
                         </fieldset>
 
-                        <fieldset class="form__item">
+                        <fieldset class="form__item3">
 
                             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
